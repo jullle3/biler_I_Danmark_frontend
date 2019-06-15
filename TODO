@@ -1,0 +1,6 @@
+- Bedre JumboTron tekst. Der skal forkortes, folk læser maks 1 linje. Gør det spændende!
+- Finde alternativ til tables, da deres animationer med collapse lagger (Fejl i bootstrap)
+    - Lister kan benyttes
+
+Bugs:
+- Skal klikke 2 gange på "Skjul" før tabellen collapser.

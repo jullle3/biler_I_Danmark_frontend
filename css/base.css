@@ -1,0 +1,8 @@
+.table {
+    table-layout: fixed;
+    /* width: auto; Tabellerne justerer størelsen ud fra tekstbredden  */
+}
+
+.btn-space {
+    margin-left: 100px;
+}
