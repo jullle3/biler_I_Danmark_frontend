@@ -6,3 +6,59 @@
 .btn-space {
     margin-left: 100px;
 }
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 800px;
+    overflow: auto;
+}
+
+/*
+.table-wrapper-scroll-y {
+    display: block;
+}
+*/
+
+.table-links {
+    color: inherit;
+}
+
+/* Carousel */
+#myCarousel {
+    margin-bottom: 2rem;
+}
+/* Tabeller */
+#price_tables {
+    margin-bottom: 2rem;
+}
+/* Fixer bug som får hoizontal slidebar til at dukke op*/
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.bottom-banner {
+    color: #b1afaf;
+}
+/* Footer
+footer p {
+    margin:0;
+    padding:10px;
+    color: #b1afaf;
+
+}
+*/
+
+footer a {
+    color: #b1afaf;
+}
+
+.bottom-banner {
+    background: #2E2E2E
+}
+
+div.footer-copyright {
+    background: #212121;
+    text-align: center;
+    padding: 10px 0 10px;
+}
