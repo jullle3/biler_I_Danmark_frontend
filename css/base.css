@@ -7,9 +7,10 @@
     margin-left: 100px;
 }
 
+/* Tables */
 .my-custom-scrollbar {
     position: relative;
-    height: 800px;
+    height: 600px;
     overflow: auto;
 }
 
