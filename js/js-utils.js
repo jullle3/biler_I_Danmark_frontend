@@ -25,18 +25,20 @@ $(document).ready(function(){
 
 
         /* Indsætter data i tabellerne */
-        let car_brands = ["Audi", "BMW", "Citroen", "Ford", "Mercedes", "Opel", "Peugeot", "Porsche", "Toyota", "Volkswagen"];
+        let car_brands = ["Audi", "BMW", "Citroen", "Fiat", "Ford", "Mercedes", "Opel", "Peugeot", "Porsche", "Toyota", "Volkswagen"];
         let tables = [
             "table-audi",
             "table-bmw",
             "table-citroen",
+            "table-fiat",
             "table-ford",
             "table-mercedes",
             "table-opel",
             "table-peugeot",
             "table-porsche",
             "table-toyota",
-            "table-volkswagen",];
+            "table-volkswagen",
+            ];
 
 
         for (i = 0; i < car_brands.length; i++) {  // for hvert bilmærke
