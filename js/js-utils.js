@@ -5,17 +5,17 @@ $(document).ready(function(){
     // Indsætter data i carousel
     $.getJSON('https://biler-i-danmark-api.appspot.com/storage/get_cars').done(function(data) {
         let i;
-        let price_changes_len = data["Prisændringer"].length;
+        let price_changes_len = data["price_changes"].length;
         let carousel_final_str;
         for (i = 0; i < price_changes_len; i++){
             if (i >= 10) break;  // max 10 carousel elementer
 
-            let price_change_object = data["Prisændringer"][price_changes_len - (i + 1) ];  // -1 for at undgå off by one
-            carousel_final_str = '<div class=\"carousel-item text-center\"> <p>' + price_change_object["Text"] + '</p> </div>';
+            let price_change_object = data["price_changes"][price_changes_len - (i + 1) ];  // -1 for at undgå off by one
+            carousel_final_str = '<div class=\"carousel-item text-center\"> <p>' + price_change_object["text"] + '</p> </div>';
 
             const div = document.createElement('div');
             div.className = 'carousel-item text-center';
-            div.innerHTML = '<p>' + price_change_object["Text"] + '</p>';
+            div.innerHTML = '<p>' + price_change_object["text"] + '</p>';
 
             document.getElementById("carousel-inner-id").appendChild(div)
 
@@ -47,9 +47,9 @@ $(document).ready(function(){
         for (i = 0; i < car_brands.length; i++) {  // for hvert bilmærke
             let table_ref = document.getElementById(tables[i]).getElementsByTagName('tbody')[0];
 
-            for (let j = 0; j < data["Biler"][car_brands[i]].length; j++){  // for hver model
-                let model = data["Biler"][car_brands[i]][j]["Model"];
-                let price = data["Biler"][car_brands[i]][j]["Pris"];
+            for (let j = 0; j < data["cars"][car_brands[i]].length; j++){  // for hver model
+                let model = data["cars"][car_brands[i]][j]["model"];
+                let price = data["cars"][car_brands[i]][j]["price"];
 
                 if (price === 0){
                     continue;
