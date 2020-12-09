@@ -55,6 +55,9 @@ $(document).ready(function(){
                     continue;
                 }
 
+                // prettify price
+                price = price.toLocaleString()
+
                 let tr = table_ref.insertRow();  // row
                 let td = tr.insertCell(0);  // celle på idx 0
                 let td2 = tr.insertCell(1);  // celle på idx 1
