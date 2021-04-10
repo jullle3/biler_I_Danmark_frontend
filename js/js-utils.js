@@ -73,5 +73,9 @@ $(document).ready(function(){
                 td2.appendChild(text2);  // -||-
             }
         }
+
+        let d = new Date(data["last_updated"])
+        document.getElementById("nyeste_prisændring").innerText = "Nyeste prisændring: " + d.toLocaleDateString()
+        console.log("changed text")
     })
 });

@@ -26,7 +26,6 @@
 
     <link rel="stylesheet" href="css/base.css">   
 
-    
 
     <!-- Favicon -->
     <!--<link rel="shortcut icon" href="http://www.iconj.com/ico/1/0/10i0g16h4i.ico" type="image/x-icon" /> --><!-- Farvet opacity -->
@@ -40,6 +39,8 @@
     <title>[Beta] Bilpriser</title>
 </head>
 <body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Navigation bar -->
 <div class="navbar navbar-expand-xl bg-dark navbar-dark ">
@@ -57,6 +58,11 @@
         <li class="nav-item">
             <a class="nav-link" href="#" data-toggle="modal" data-target="#modal_rapporter_fejl">Rapporter fejl</a>
         </li>
+
+        <li><div class="topright">test</div></li>
+        <li class="nav-item justify-content-end">
+            <a href="#"><i class="fa fa-fw fa-user"></i></a>
+        </li>
     </ul>
 </div>
 
@@ -70,7 +76,7 @@
         <!-- AlTERNATIV TITEL
         En samling af alle nybilspriser fra store bilmærker i Danmark -->
         <h1 style="margin-top:30px">Denne side hjælper dig med at få et overblik over de konstant skiftende nybilspriser i Danmark</h1>
-        <p>Priserne opdateres 1 gang i timen</p>
+        <p id="nyeste_prisændring"></p>
     </div>
 </div>
 
