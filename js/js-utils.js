@@ -25,7 +25,7 @@ $(document).ready(function(){
 
 
         /* Indsætter data i tabellerne */
-        let car_brands = ["Audi", "BMW", "Citroen", "Fiat", "Ford", "Hyundai", "Mazda", "Mercedes", "Mini", "Nissan", "Opel",
+        let car_brands = ["Audi", "BMW", "Citroen", "Fiat", "Ford", "Hyundai", "Kia", "Mazda", "Mercedes", "Mini", "Nissan", "Opel",
             "Peugeot", "Porsche", "Renault", "Skoda", "Suzuki", "Toyota", "Volkswagen", "Volvo"];
         let tables = [
             "table-audi",
@@ -34,6 +34,7 @@ $(document).ready(function(){
             "table-fiat",
             "table-ford",
             "table-hyundai",
+            "table-kia",
             "table-mazda",
             "table-mercedes",
             "table-mini",
