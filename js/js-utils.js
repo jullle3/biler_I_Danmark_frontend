@@ -80,6 +80,7 @@ $(document).ready(function(){
 
         let d = new Date(data["last_updated"])
         document.getElementById("nyeste_prisændring").innerText = "Nyeste prisændring: " + d.toLocaleDateString()
+        document.getElementById("car_count").innerText = data["total"] + " biler"
         console.log("changed text")
     })
 });
