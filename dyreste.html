@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- [Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144248250-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-144248250-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/base.css">   
+
+
+    <!-- Favicon -->
+    <!--<link rel="shortcut icon" href="http://www.iconj.com/ico/1/0/10i0g16h4i.ico" type="image/x-icon" /> --><!-- Farvet opacity -->
+
+     <!-- <link rel="shortcut icon" href="http://www.iconj.com/ico/k/w/kw5g22840t.ico" type="image/x-icon" /> --><!-- Farvet -->
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> <!-- Farvet lille -->
+     <!-- <link rel="shortcut icon" href="http://www.iconj.com/ico/b/a/bab609jv7a.ico" type="image/x-icon" /> --> <!-- Dark -->
+
+
+    <title>[Beta] Bilpriser</title>
+</head>
+<body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Navigation bar -->
+<div class="navbar navbar-expand-xl bg-dark navbar-dark ">
+    <a class="navbar-brand" href="#">Bilprisbasen <sup>Beta</sup></a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#modal_hvordan">Hvordan virker det?</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#modal_om">Om</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#modal_kontakt">Kontakt</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#modal_rapporter_fejl">Rapporter fejl</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="billigste.html">Billligste</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="dyreste.html">Dyreste</a>
+        </li>
+    </ul>
+</div>
+
+<!-- JumboTron -->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+        <h1 style="margin-top:30px">Dyreste biler i Danmark</h1>
+        <p id="nyeste_prisændring"></p>
+    </div>
+</div>
+
+
+
+<!-- Tables -->
+<div id="price_tables" class="container">
+    <div class="row">
+
+        <!-- Billigste biler i DK -->
+        <div class="col-sm-12">
+<!--                <div class="table-wrapper-scroll-y" style="height: 800px; position: relative; overflow: auto">-->
+                <div class="table-wrapper-scroll-y">
+                    <table id="table-dyreste" class="table table-striped table-hover">
+                        <thead><tr><th>Model</th><th>Pris i kr ,-</th></tr></thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Modals -->
+<!-- Hvordan virker det? -->
+<div class="modal fade" id="modal_hvordan">
+ <div class="modal-dialog">
+  <div class="modal-content">
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Hvordan virker det?</h4>
+      <button type="button" class="close" data-dismiss="modal">×</button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+      <p>Det fungerer ved, at et program automatisk indsamler data fra en masse bilmærkers hjemmesider, og dernæst grupperer
+          priserne til de respektive modeller. Til sidst vises dataen på hjemmesiden som du netop er på nu.</p>
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Luk</button>
+    </div>
+  </div>
+ </div>
+</div>
+
+<!-- Om -->
+<div class="modal fade" id="modal_om">
+ <div class="modal-dialog">
+  <div class="modal-content">
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Om os</h4>
+      <button type="button" class="close" data-dismiss="modal">×</button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+        <p>Har du et problem der skal løses?</p>
+        <p>Ring 2480 7350 for en uforpligtende samtale.</p>
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Luk</button>
+    </div>
+  </div>
+ </div>
+</div>
+
+<!-- Kontakt -->
+<div class="modal fade" id="modal_kontakt">
+ <div class="modal-dialog">
+  <div class="modal-content">
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Kontakt</h4>
+      <button type="button" class="close" data-dismiss="modal">×</button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+        <p>Kontakt mig endelig hvis du har spørgsmål, forbedringer, eller andet i sinde.</p>
+        <p>Email: Bilprisbasen@gmail.com</p>
+        <p>Tlf: 2480 7350</p>
+        <p>CVR-nr: 40606130</p>
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Luk</button>
+    </div>
+  </div>
+ </div>
+</div>
+
+<!-- [BETA STUFF] Rapporter fejl/ændring -->
+<div class="modal fade" id="modal_rapporter_fejl">
+ <div class="modal-dialog">
+  <div class="modal-content">
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Rapporter fejl/tilføjelser</h4>
+      <button type="button" class="close" data-dismiss="modal">×</button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+        <p>Enhver form for rapportering af fejludbedringer, tilføjelser, ændringer m.m. bedes sendt til</p>
+        <p>Bilprisbasen@gmail.com</p>
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Luk</button>
+    </div>
+  </div>
+ </div>
+</div>
+
+
+
+<!-- Footer -->
+<footer>
+    <div class="bottom-banner">
+        <div class="row">
+            <div class="col-sm-6">
+
+                <div class="container text-center">
+                    <p></p>
+                    <p>Alle priser er inkl. afgift + moms og uden ekstraudstyr & leveringsomkostninger</p>
+                    <p>Der tages forbehold for tastefejl, prisændringer & fejl</p>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="container text-center">
+                 <a class="nav-link" href="#" data-toggle="modal" data-target="#modal_hvordan">Hvordan virker det?</a>
+                 <a class="nav-link" href="#" data-toggle="modal" data-target="#modal_om">Om os</a>
+                 <a class="nav-link" href="#" data-toggle="modal" data-target="#modal_kontakt">Kontakt</a>
+                 <a class="nav-link" href="#" data-toggle="modal" data-target="#modal_rapporter_fejl">Rapporter fejl</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p>© 2021 Copyright bilprisbasen.dk. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script src="js/dyreste.js"></script>
+
+
+</body>
+</html>
+
+
