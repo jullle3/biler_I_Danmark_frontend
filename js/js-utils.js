@@ -64,6 +64,7 @@ $(document).ready(function(){
             for (let j = 0; j < data["cars"][car_brands[i]].length; j++){  // for hver model
                 let model = data["cars"][car_brands[i]][j]["model"];
                 let price = data["cars"][car_brands[i]][j]["price"];
+                let id = data["cars"][car_brands[i]][j]["_id"];
 
                 if (price === 0){
                     continue;
@@ -72,17 +73,85 @@ $(document).ready(function(){
                 // prettify price
                 price = price.toLocaleString()
 
+//                ctx.setAttribute("hidden", "")
+
+
                 let tr = table_ref.insertRow();  // row
                 let td = tr.insertCell(0);  // celle på idx 0
                 let td2 = tr.insertCell(1);  // celle på idx 1
 
+                // Graf
+                var showGraph = new Boolean(false)
+
+                td2.addEventListener("click", function() {
+                    td2.innerHTML = ''
+
+                    if (showGraph) {
+                        $.getJSON('https://biler-i-danmark-api.appspot.com/storage/get_price_changes?id=' + id).done(function(data) {
+//                        $.getJSON('localhost:5000/storage/get_price_changes?id=' + id).done(function(data) {
+                            console.log(data)
+
+                            var ctx = document.createElement("canvas")
+                            new Chart(ctx, {
+                                type: 'line',
+                                data: {
+    //                                labels: ["2020-03-12", "2020-11-10 08:00:26", "2020-12-23 08:00:47"],
+                                        labels: data["x-axis"],
+                                    datasets: [{
+                                        label: "Prishistorik",
+                                            data: data["y-axis"],
+//                                        data: [431145, 360683, 531100],
+                                        borderColor: "rgb(72, 200, 106)",
+                                        //backgroundColor:"rgb(72, 200, 106)",
+                                        fill: true
+                                    }]
+                                },
+                                options: {
+                                    legend: {
+                                        display: false
+                                    },
+                                    tooltips: {
+                                        enabled: false
+                                    },
+                                    scales: {
+                                        xAxes: [{
+                                            ticks: {
+                                                autoSkip: false
+                                            }
+                                        }]
+                                    },
+    //                                responsive: true,
+    //                                maintainAspectRatio: false,
+                                }
+                            });
+
+                            ctx.setAttribute("style", "display: block; height: 80px; width: 140px;")
+                            ctx.setAttribute("id", id)
+
+        //                    text2.setAttribute("hidden", "")
+                            td2.appendChild(ctx);  // -||-
+                        })
+
+
+                    } else {
+                        td2.appendChild(text2);
+                    }
+                    showGraph = !showGraph
+                })
+
 
                 let text = document.createTextNode(model);  // text til celle på idx 0
-                let text2 = document.createTextNode(price);  // text til celle på idx 0
+                let text2 = document.createTextNode(price)
 
                 td.appendChild(text);  // tilføjer teksten til cellen
                 td2.appendChild(text2);  // -||-
+
+
+//             tmp
+//            break
             }
+            // tmp
+//            break
         }
 
         let d = new Date(data["last_updated"])
